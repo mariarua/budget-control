@@ -1,9 +1,18 @@
 import NewBudget from "./NewBudget";
-function Header({ budget, setBudget }) {
+import BudgetControl from "./BudgetControl";
+function Header({ budget, setBudget, isValidBudget, setIsValidBudget }) {
   return (
     <header>
       <h1>Control de presupuesto</h1>
-      <NewBudget budget={budget} setBudget={setBudget} />
+      {isValidBudget ? (
+        <BudgetControl budget={budget} />
+      ) : (
+        <NewBudget
+          budget={budget}
+          setBudget={setBudget}
+          setIsValidBudget={setIsValidBudget}
+        />
+      )}
     </header>
   );
 }
