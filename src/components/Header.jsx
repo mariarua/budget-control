@@ -1,8 +1,10 @@
-function Header() {
+import NewBudget from "./NewBudget";
+function Header({ budget, setBudget }) {
   return (
-    <div>
+    <header>
       <h1>Control de presupuesto</h1>
-    </div>
+      <NewBudget budget={budget} setBudget={setBudget} />
+    </header>
   );
 }
 
